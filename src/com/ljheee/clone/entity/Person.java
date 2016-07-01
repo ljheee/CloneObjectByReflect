@@ -1,4 +1,4 @@
-package com.ljheee.clone;
+package com.ljheee.clone.entity;
 
 public class Person {
 	

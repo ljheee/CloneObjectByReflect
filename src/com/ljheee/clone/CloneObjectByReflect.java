@@ -5,7 +5,16 @@ import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
-public class Test {
+import com.ljheee.clone.entity.Person;
+import com.ljheee.clone.entity.Student;
+
+/**
+ * 克隆 一个对象
+ * 中心思想：获取已有对象的所有字段，根据字段名，拼接获得所有get/set方法，动态调用它们设置“新对象”的所有属性
+ * @author ljheee
+ *
+ */
+public class CloneObjectByReflect {
 
 	public static Object copyObject(Object srcObject) {
 		// 获取源对象类型
@@ -35,27 +44,23 @@ public class Test {
 			}
 
 		} catch (SecurityException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (NoSuchMethodException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IllegalArgumentException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (InstantiationException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IllegalAccessException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (InvocationTargetException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return newObject;
 	}
 
+	
+	
 	public static void main(String[] args) {
 
 		Student student1 = new Student();
